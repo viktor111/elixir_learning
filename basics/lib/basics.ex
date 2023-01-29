@@ -1,10 +1,8 @@
 defmodule Basics do
-  def add_two_numbers() do
-    num1 = IO.gets("Enter a number: ")
-    num2 = IO.gets("Enter another number: ")
+  def add_two_numbers_piping() do
+    num1 = IO.gets("Enter a number: ") |> String.trim |> String.to_integer
+    num2 = IO.gets("Enter another number: ") |> String.trim |> String.to_integer
 
-    result = String.to_integer(num1) + String.to_integer(num2)
-
-    IO.puts("The result is: #{result}")
+    IO.puts("The sum of the two numbers is #{num1 + num2}")
   end
 end
