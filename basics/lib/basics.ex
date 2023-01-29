@@ -18,8 +18,25 @@ defmodule Basics do
 
   def each_loop_over_list() do
     names = ["Heisenberg", "Potter", "Buddy"]
+
     Enum.each(names, fn(name) ->
       IO.puts(name)
     end)
   end
+
+  def recursion_loop_list() do
+    names = ["Heisenberg", "Potter", "Buddy"]
+
+    recursive_loop(names, 0)
+  end
+
+  def recursive_loop(list, index) when index < length(list) do
+    IO.puts(Enum.at(list, index))
+    recursive_loop(list, index + 1)
+  end
+
+  def recursive_loop(list, index) do
+    # when index is out of range
+  end
+
 end
